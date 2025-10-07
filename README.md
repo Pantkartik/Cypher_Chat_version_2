@@ -1,275 +1,200 @@
-```markdown
-# 🚀 CypherChat: Secure End-to-End Encrypted Chat Application
+# 💬 Cypher Chat v2: Secure & Real-time Communication
 
-A modern, secure chat application built with TypeScript, React, and Socket.IO, offering end-to-end encryption for private conversations. Your privacy, our priority.
+Cypher Chat v2 is a modern, real-time chat application designed for secure and private communication, built with a robust TypeScript backend and a dynamic JavaScript/HTML/CSS frontend.
 
-![License](https://img.shields.io/github/license/Pantkartik/Cypher_Chat_version_2)
-![GitHub stars](https://img.shields.io/github/stars/Pantkartik/Cypher_Chat_version_2?style=social)
-![GitHub forks](https://img.shields.io/github/forks/Pantkartik/Cypher_Chat_version_2?style=social)
-![GitHub issues](https://img.shields.io/github/issues/Pantkartik/Cypher_Chat_version_2)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/Pantkartik/Cypher_Chat_version_2)
-![GitHub last commit](https://img.shields.io/github/last-commit/Pantkartik/Cypher_Chat_version_2)
+---
 
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![Socket.io](https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101)
-![NodeJS](https://img.shields.io/badge/node.js-%2343853D.svg?style=for-the-badge&logo=node.js&logoColor=white)
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![License](https://img.shields.io/badge/license-None-lightgrey)
+![Stars](https://img.shields.io/github/stars/Pantkartik/Cypher_Chat_version_2?style=social)
+![Forks](https://img.shields.io/github/forks/Pantkartik/Cypher_Chat_version_2?style=social)
 
-## 📋 Table of Contents
+---
 
-- [About](#about)
-- [Features](#features)
-- [Demo](#demo)
-- [Quick Start](#quick-start)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [Testing](#testing)
-- [Deployment](#deployment)
-- [FAQ](#faq)
-- [License](#license)
-- [Support](#support)
-- [Acknowledgments](#acknowledgments)
+![Cypher Chat Application Preview](/preview_example.png)
+_A glimpse of the Cypher Chat user interface._
 
-## About
-
-CypherChat is a real-time chat application designed with privacy and security in mind. Leveraging end-to-end encryption, it ensures that only the sender and receiver can read the messages, providing a secure communication channel. The application is built using TypeScript for type safety, React for a dynamic user interface, and Socket.IO for real-time communication.
-
-This project addresses the increasing need for secure and private communication in a world where data breaches and privacy concerns are rampant. It targets individuals and organizations that prioritize confidentiality and require a reliable platform for secure messaging.
-
-The architecture consists of a React-based frontend, a Node.js backend powered by Socket.IO for real-time communication, and end-to-end encryption implemented using cryptographic libraries. CypherChat distinguishes itself by its focus on user-friendly design coupled with robust security measures, making secure communication accessible to everyone.
 
 ## ✨ Features
 
-- 🎯 **End-to-End Encryption**: Messages are encrypted on the sender's device and decrypted only on the receiver's device, ensuring maximum privacy.
-- ⚡ **Real-time Communication**: Utilizes Socket.IO for instant message delivery and updates.
-- 🔒 **Secure Key Exchange**: Implements a secure key exchange mechanism to establish encrypted communication channels.
-- 🎨 **User-Friendly Interface**: Clean and intuitive design for a seamless user experience.
-- 📱 **Responsive Design**: Works flawlessly on various devices, including desktops, tablets, and smartphones.
-- 🛠️ **Extensible Architecture**: Designed for easy integration of new features and functionalities.
+*   **🔒 End-to-End Encryption (Planned):** Secure your conversations with advanced cryptographic techniques to ensure privacy.
+*   **⚡ Real-time Messaging:** Experience instant message delivery and seamless communication with WebSocket technology.
+*   **👤 User Authentication & Profiles:** Manage user accounts securely with robust authentication and personalized user profiles.
+*   **🖼️ Rich Media Support:** Share images, videos, and other files directly within your chats (planned).
+*   **🚀 Scalable Architecture:** Built with a modular backend and frontend, ready to scale for growing user bases.
 
-## 🎬 Demo
 
-🔗 **Live Demo**: [https://cypherchat-demo.example.com](https://cypherchat-demo.example.com)
+## ⚙️ Installation Guide
 
-### Screenshots
-![Chat Interface](screenshots/chat-interface.png)
-*Main chat interface showing message exchange and user list.*
-
-![Settings Panel](screenshots/settings-panel.png)
-*User settings panel with options for encryption keys and privacy settings.*
-
-## 🚀 Quick Start
-
-Clone and run CypherChat in a few simple steps:
-
-```bash
-git clone https://github.com/Pantkartik/Cypher_Chat_version_2.git
-cd Cypher_Chat_version_2
-npm install
-npm start
-```
-
-Open [http://localhost:3000](http://localhost:3000) to view the application in your browser.
-
-## 📦 Installation
+Follow these steps to get Cypher Chat v2 up and running on your local machine.
 
 ### Prerequisites
-- Node.js 18+ and npm
-- Git
 
-### Steps
+Ensure you have the following installed:
+*   Node.js (LTS version recommended)
+*   npm or Yarn package manager
+*   Git
 
-1.  Clone the repository:
+### Step-by-Step Setup
 
-```bash
-git clone https://github.com/Pantkartik/Cypher_Chat_version_2.git
-cd Cypher_Chat_version_2
-```
+1.  **Clone the Repository:**
 
-2.  Install dependencies:
+    Start by cloning the project repository to your local machine:
 
-```bash
-npm install
-```
+    ```bash
+    git clone https://github.com/Pantkartik/Cypher_Chat_version_2.git
+    cd Cypher_Chat_version_2
+    ```
 
-3.  Start the development server:
+2.  **Install Backend Dependencies:**
 
-```bash
-npm start
-```
+    Navigate into the `Backend` directory and install its dependencies:
 
-## 💻 Usage
+    ```bash
+    cd Backend
+    npm install # or yarn install
+    ```
 
-### Basic Usage
+3.  **Configure Backend Environment (Optional):**
+
+    If your backend requires specific environment variables (e.g., for database connection, secret keys), create a `.env` file in the `Backend` directory based on a provided `.env.example` (if available).
+
+    ```bash
+    cp .env.example .env
+    # Open .env and configure your variables
+    ```
+
+4.  **Install Frontend Dependencies:**
+
+    Navigate into the `Frontend` directory and install its dependencies:
+
+    ```bash
+    cd ../Frontend # Go back to root, then enter Frontend
+    npm install # or yarn install
+    ```
+
+5.  **Start the Backend Server:**
+
+    From the `Backend` directory, start the server:
+
+    ```bash
+    cd ../Backend
+    npm start # or npm run dev if using a dev script
+    ```
+    The backend server will typically run on `http://localhost:3000` (or another port as configured).
+
+6.  **Start the Frontend Application:**
+
+    From the `Frontend` directory, launch the frontend:
+
+    ```bash
+    cd ../Frontend
+    npm start # or npm run dev
+    ```
+    The frontend application will usually be accessible at `http://localhost:5173` (or another port).
+
+Your Cypher Chat v2 application should now be running!
+
+
+## 🚀 Usage Examples
+
+Once installed, you can access the application through your web browser.
+
+### Basic Interaction
+
+1.  **Open in Browser:** Navigate to `http://localhost:5173` (or your configured frontend port) in your web browser.
+2.  **Register/Login:** Create a new account or log in with existing credentials.
+3.  **Start Chatting:** Begin a new conversation or join an existing one to experience real-time messaging.
+
+### Example Code Snippet (Frontend Connection)
+
+This is a conceptual example of how the frontend might connect to the backend WebSocket server:
 
 ```typescript
-// Example of sending an encrypted message
-import { encryptMessage } from './utils/encryption';
+// Frontend (e.g., in a JavaScript or TypeScript file)
+import { io } from 'socket.io-client';
 
-const message = "Hello, this is a secret message!";
-const publicKey = "YOUR_RECIPIENT_PUBLIC_KEY"; // Replace with the recipient's public key
+const socket = io('http://localhost:3000'); // Connect to your backend WebSocket server
 
-const encryptedMessage = encryptMessage(message, publicKey);
+socket.on('connect', () => {
+  console.log('Connected to chat server!');
+  // Emit a message
+  socket.emit('sendMessage', {
+    sender: 'Pantkartik',
+    message: 'Hello, Cypher Chat!',
+    timestamp: new Date().toISOString()
+  });
+});
 
-console.log("Encrypted Message:", encryptedMessage);
+socket.on('receiveMessage', (data) => {
+  console.log('New message:', data.message, 'from', data.sender);
+  // Update UI with the new message
+});
+
+socket.on('disconnect', () => {
+  console.log('Disconnected from chat server.');
+});
 ```
 
-### Advanced Examples
+![Cypher Chat Usage Screenshot](/usage_example.png)
+_Example of a user interacting with the chat interface._
 
-```typescript
-// Example of decrypting an encrypted message
-import { decryptMessage } from './utils/encryption';
 
-const encryptedMessage = "ENCRYPTED_MESSAGE_FROM_SENDER"; // Replace with the actual encrypted message
-const privateKey = "YOUR_PRIVATE_KEY"; // Replace with your private key
+## 🗺️ Project Roadmap
 
-const decryptedMessage = decryptMessage(encryptedMessage, privateKey);
+Cypher Chat v2 is continuously evolving. Here's a glimpse of what's planned:
 
-console.log("Decrypted Message:", decryptedMessage);
-```
+### Upcoming Features
+*   **Version 1.1.0:**
+    *   Implement end-to-end encryption for private messages.
+    *   Add group chat functionality.
+    *   Introduce rich media sharing (images, videos).
+*   **Version 1.2.0:**
+    *   Develop push notifications for new messages.
+    *   Integrate user presence indicators (online/offline).
+    *   Implement message reactions and replies.
 
-## ⚙️ Configuration
+### Planned Improvements
+*   Enhance UI/UX for a more intuitive and modern feel.
+*   Optimize backend performance and scalability.
+*   Improve error handling and logging across the application.
+*   Expand test coverage for both frontend and backend.
 
-### Environment Variables
 
-Create a `.env` file in the root directory to configure the application:
+## 🤝 Contribution Guidelines
 
-```env
-# Server configuration
-PORT=3000
-NODE_ENV=development
-
-# Socket.IO configuration
-SOCKET_IO_PING_TIMEOUT=5000
-SOCKET_IO_PING_INTERVAL=25000
-
-# Encryption configuration
-ENCRYPTION_ALGORITHM=AES-256-CBC
-```
-
-## 📁 Project Structure
-
-```
-Cypher_Chat_version_2/
-├── 📁 src/
-│   ├── 📁 components/          # Reusable UI components (e.g., ChatBox, Message)
-│   ├── 📁 pages/              # Application pages (e.g., ChatPage, LoginPage)
-│   ├── 📁 context/            # React Context for state management
-│   ├── 📁 utils/              # Utility functions (e.g., encryption, date formatting)
-│   ├── 📁 services/           # API services (if any)
-│   ├── 📁 styles/             # CSS/styling files
-│   ├── 📄 App.tsx             # Main application component
-│   └── 📄 index.tsx           # Application entry point
-├── 📁 public/                 # Static assets (e.g., images, fonts)
-├── 📄 .env                    # Environment variables
-├── 📄 .gitignore              # Git ignore rules
-├── 📄 package.json            # Project dependencies
-├── 📄 README.md               # Project documentation
-└── 📄 tsconfig.json         # TypeScript configuration
-```
-
-## 🤝 Contributing
-
-We welcome contributions to CypherChat! Please see our [Contributing Guide](CONTRIBUTING.md) (create this file) for details on how to contribute.
-
-### Quick Contribution Steps
-
-1.  🍴 Fork the repository
-2.  🌟 Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3.  ✅ Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4.  📤 Push to the branch (`git push origin feature/AmazingFeature`)
-5.  🔃 Open a Pull Request
-
-### Development Setup
-
-```bash
-# Fork and clone the repo
-git clone https://github.com/yourusername/Cypher_Chat_version_2.git
-
-# Install dependencies
-npm install
-
-# Create a new branch
-git checkout -b feature/your-feature-name
-
-# Make your changes and test
-npm run start # or any test command
-
-# Commit and push
-git commit -m "Description of changes"
-git push origin feature/your-feature-name
-```
+We welcome contributions to Cypher Chat v2! To ensure a smooth collaboration process, please follow these guidelines:
 
 ### Code Style
+*   Adhere to the [ESLint configuration](https://eslint.org/) and [Prettier formatting](https://prettier.io/) used in the project.
+*   Write clear, concise, and well-commented code.
+*   Ensure all new features or bug fixes include appropriate unit and integration tests.
 
--   Follow existing code conventions
--   Use TypeScript's type system effectively
--   Write clear and concise code
--   Add comments where necessary
+### Branch Naming Conventions
+*   Use descriptive branch names:
+    *   `feature/your-feature-name` for new features.
+    *   `bugfix/issue-description` for bug fixes.
+    *   `chore/task-description` for maintenance tasks (e.g., dependency updates).
 
-## Testing
+### Pull Request Process
+1.  Fork the repository and create your feature/bugfix branch from `main`.
+2.  Ensure your code passes all existing tests and add new tests for your changes.
+3.  Commit your changes with clear, descriptive commit messages.
+4.  Submit a pull request to the `main` branch of this repository.
+5.  Provide a detailed description of your changes in the PR, including any relevant issue numbers.
 
-To run tests, use the following command:
+### Testing Requirements
+*   All new features must be accompanied by unit tests.
+*   Bug fixes should include a test that reproduces the bug and then passes with the fix.
+*   Run `npm test` (or `yarn test`) in both `Backend` and `Frontend` directories before submitting a PR.
 
-```bash
-npm test
-```
 
-(Note: You will need to configure your testing environment and write test cases.)
+## ⚖️ License Information
 
-## Deployment
+This project currently has **no specified license**.
 
-Instructions for deploying CypherChat will depend on your chosen platform. Here's a basic outline for deploying to a platform like Vercel or Netlify:
+This means that by default, all rights are reserved by the copyright holder, Pantkartik. You may not reproduce, distribute, or create derivative works from this project without explicit permission.
 
-1.  **Prepare your repository:** Ensure your code is pushed to a GitHub repository.
-2.  **Sign up/Log in:** Create an account on Vercel or Netlify.
-3.  **Connect your repository:** Link your GitHub repository to your Vercel or Netlify account.
-4.  **Configure deployment settings:** Set up environment variables and any necessary build commands.
-5.  **Deploy!** Trigger the deployment process.
+**Copyright (c) 2024 Pantkartik. All rights reserved.**
 
-Detailed instructions can be found in the documentation for Vercel and Netlify.
-
-## FAQ
-
-**Q: How secure is CypherChat?**
-A: CypherChat uses end-to-end encryption, which means that messages are encrypted on the sender's device and can only be decrypted by the intended recipient. This ensures a high level of security and privacy.
-
-**Q: What encryption algorithm is used?**
-A: The default encryption algorithm is AES-256-CBC, but this can be configured in the `.env` file.
-
-**Q: Can I use CypherChat for commercial purposes?**
-A: Yes, CypherChat is licensed under the MIT License, which allows for commercial use.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-### License Summary
-- ✅ Commercial use
-- ✅ Modification
-- ✅ Distribution
-- ✅ Private use
-- ❌ Liability
-- ❌ Warranty
-
-## 💬 Support
-
-- 📧 **Email**: support@cypherchat.example.com
-- 🐛 **Issues**: [GitHub Issues](https://github.com/Pantkartik/Cypher_Chat_version_2/issues)
-- 📖 **Documentation**: [Full Documentation](https://docs.cypherchat.example.com)
-
-## 🙏 Acknowledgments
-
-- 📚 **Libraries used**:
-  - [React](https://reactjs.org/) - For building the user interface.
-  - [Socket.IO](https://socket.io/) - For real-time communication.
-  - [crypto-js](https://www.npmjs.com/package/crypto-js) - For cryptographic functions.
-- 👥 **Contributors**: Thanks to all [contributors](https://github.com/Pantkartik/Cypher_Chat_version_2/contributors)
-
-- 1. Nivedita Dani
-  2. Abhay Goswami
-  3. Diva Tripathi
-```
+For any inquiries regarding licensing or usage, please contact the main contributor.
