@@ -1,0 +1,284 @@
+{
+  "sessions": {
+    "4EB078EC": {
+      "id": "4EB078EC",
+      "createdAt": "2025-10-07T11:27:35.055Z"
+    },
+    "F63398B8": {
+      "id": "F63398B8",
+      "createdAt": "2025-10-07T11:28:39.920Z"
+    },
+    "B2171132": {
+      "id": "B2171132",
+      "createdAt": "2025-10-07T11:31:29.179Z"
+    },
+    "4E849610": {
+      "id": "4E849610",
+      "createdAt": "2025-10-07T11:34:54.528Z"
+    },
+    "34AB07ED": {
+      "id": "34AB07ED",
+      "createdAt": "2025-10-07T11:35:21.368Z"
+    },
+    "1C542CCA": {
+      "id": "1C542CCA",
+      "createdAt": "2025-10-07T11:37:21.054Z"
+    },
+    "1B35ED1B": {
+      "id": "1B35ED1B",
+      "createdAt": "2025-10-07T11:44:07.661Z"
+    },
+    "4519AB53": {
+      "id": "4519AB53",
+      "createdAt": "2025-10-07T11:45:01.781Z"
+    },
+    "972AD9FD": {
+      "id": "972AD9FD",
+      "createdAt": "2025-10-07T11:48:21.904Z"
+    },
+    "216B797B": {
+      "id": "216B797B",
+      "createdAt": "2025-10-07T11:53:59.663Z"
+    },
+    "E0AF17A1": {
+      "id": "E0AF17A1",
+      "createdAt": "2025-10-07T11:54:28.832Z"
+    },
+    "7B64B07C": {
+      "id": "7B64B07C",
+      "createdAt": "2025-10-07T12:13:24.579Z"
+    },
+    "0F282A0D": {
+      "id": "0F282A0D",
+      "createdAt": "2025-10-07T17:25:45.602Z"
+    },
+    "F41CE764": {
+      "id": "F41CE764",
+      "createdAt": "2025-10-07T17:39:23.224Z"
+    },
+    "6DE91804": {
+      "id": "6DE91804",
+      "createdAt": "2025-10-07T17:41:51.873Z",
+      "messages": [],
+      "users": []
+    },
+    "F9D7E0E5": {
+      "id": "F9D7E0E5",
+      "createdAt": "2025-10-07T17:45:43.546Z",
+      "messages": [
+        {
+          "username": "Anonymous",
+          "message": "hi"
+        }
+      ],
+      "users": []
+    },
+    "836ECCD7": {
+      "id": "836ECCD7",
+      "createdAt": "2025-10-07T17:50:54.503Z",
+      "messages": [],
+      "users": []
+    },
+    "7CC25B47": {
+      "id": "7CC25B47",
+      "createdAt": "2025-10-07T17:52:47.042Z",
+      "messages": [
+        {
+          "username": "Anonymous",
+          "message": "hi",
+          "timestamp": "2025-10-07T17:53:02.512Z"
+        },
+        {
+          "username": "naman",
+          "message": "whatsapp bro",
+          "timestamp": "2025-10-07T17:53:10.310Z"
+        },
+        {
+          "username": "Anonymous",
+          "message": "not seeing the message",
+          "timestamp": "2025-10-07T17:53:28.335Z"
+        }
+      ],
+      "users": []
+    },
+    "41641E20": {
+      "id": "41641E20",
+      "createdAt": "2025-10-07T17:58:10.591Z",
+      "messages": [],
+      "users": []
+    },
+    "5F59EF10": {
+      "id": "5F59EF10",
+      "createdAt": "2025-10-07T17:59:39.848Z",
+      "messages": [
+        {
+          "id": "1759859994975",
+          "userId": "Anonymous",
+          "userName": "Anonymous",
+          "content": "aGk=",
+          "timestamp": "2025-10-07T17:59:54.975Z",
+          "encrypted": true,
+          "status": "sent"
+        },
+        {
+          "id": "1759860000333",
+          "userId": "naman",
+          "userName": "naman",
+          "content": "d2hhdHNhcHA=",
+          "timestamp": "2025-10-07T18:00:00.333Z",
+          "encrypted": true,
+          "status": "sent"
+        },
+        {
+          "id": "1759860021550",
+          "userId": "Anonymous",
+          "userName": "Anonymous",
+          "content": "dGhlIGNoYXQgaXMgd29ya2luZyByaWdodCB5ZXMgb3Igbm90IA==",
+          "timestamp": "2025-10-07T18:00:21.550Z",
+          "encrypted": true,
+          "status": "sent"
+        },
+        {
+          "id": "1759860032670",
+          "userId": "naman",
+          "userName": "naman",
+          "content": "eWVzIGl0cyB3b3JraW5nIA==",
+          "timestamp": "2025-10-07T18:00:32.670Z",
+          "encrypted": true,
+          "status": "sent"
+        },
+        {
+          "id": "1759860113936",
+          "userId": "kartik",
+          "userName": "kartik",
+          "content": "aGVsbHA=",
+          "timestamp": "2025-10-07T18:01:53.936Z",
+          "encrypted": true,
+          "status": "sent"
+        },
+        {
+          "id": "1759860120994",
+          "userId": "naman",
+          "userName": "naman",
+          "content": "bm90aGluZyBpcyB0aGVyZSA=",
+          "timestamp": "2025-10-07T18:02:00.994Z",
+          "encrypted": true,
+          "status": "sent"
+        },
+        {
+          "id": "1759860129380",
+          "userId": "Anonymous",
+          "userName": "Anonymous",
+          "content": "d2hhdCBhcmUgeW91IHNheWluZyA=",
+          "timestamp": "2025-10-07T18:02:09.380Z",
+          "encrypted": true,
+          "status": "sent"
+        },
+        {
+          "id": "1759860140482",
+          "userId": "kartik",
+          "userName": "kartik",
+          "content": "aXMgaXQgb2sg",
+          "timestamp": "2025-10-07T18:02:20.482Z",
+          "encrypted": true,
+          "status": "sent"
+        }
+      ],
+      "users": []
+    },
+    "AC52F53B": {
+      "id": "AC52F53B",
+      "createdAt": "2025-10-07T18:05:25.013Z",
+      "messages": [],
+      "users": []
+    },
+    "DD572FD9": {
+      "id": "DD572FD9",
+      "createdAt": "2025-10-07T18:07:27.005Z",
+      "messages": [
+        {
+          "id": "1759860464346",
+          "userId": "Anonymous",
+          "userName": "Anonymous",
+          "content": "aGk=",
+          "timestamp": "2025-10-07T18:07:44.346Z",
+          "encrypted": true,
+          "status": "sent"
+        },
+        {
+          "id": "1759860469525",
+          "userId": "naman",
+          "userName": "naman",
+          "content": "d2hhdHNhcHAgYnJv",
+          "timestamp": "2025-10-07T18:07:49.525Z",
+          "encrypted": true,
+          "status": "sent"
+        },
+        {
+          "id": "1759860477584",
+          "userId": "naman",
+          "userName": "naman",
+          "content": "aSBhbSBmaW5l",
+          "timestamp": "2025-10-07T18:07:57.584Z",
+          "encrypted": true,
+          "status": "sent"
+        },
+        {
+          "id": "1759860479359",
+          "userId": "Anonymous",
+          "userName": "Anonymous",
+          "content": "aSBhbSBnb29kIA==",
+          "timestamp": "2025-10-07T18:07:59.359Z",
+          "encrypted": true,
+          "status": "sent"
+        }
+      ],
+      "users": []
+    }
+  },
+  "userSessions": {
+    "F63398B8": [
+      "TestUser"
+    ],
+    "B2171132": [
+      "TestUser"
+    ],
+    "4E849610": [
+      "TestUser"
+    ],
+    "1C542CCA": [
+      "naman"
+    ],
+    "4519AB53": [
+      "TestUser"
+    ],
+    "972AD9FD": [
+      "naman"
+    ],
+    "216B797B": [
+      "TestUser"
+    ],
+    "0F282A0D": [
+      "kartik"
+    ],
+    "F41CE764": [
+      "naman"
+    ],
+    "6DE91804": [
+      "TestUser"
+    ],
+    "F9D7E0E5": [
+      "naman"
+    ],
+    "7CC25B47": [
+      "naman"
+    ],
+    "5F59EF10": [
+      "naman",
+      "kartik"
+    ],
+    "DD572FD9": [
+      "naman"
+    ]
+  }
+}
