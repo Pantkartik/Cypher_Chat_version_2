@@ -1,11 +1,14 @@
 "use client"
 
+export const dynamic = 'force-dynamic';
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Users, Plus, MessageSquare, Settings, LogOut } from "lucide-react"
+import { Users, Plus, MessageSquare } from "lucide-react"
 import Link from "next/link"
 import React, { useEffect, useState } from "react";
+import { UserMenu } from "@/components/user-menu";
 
 export default function DashboardPage() {
   const [users, setUsers] = useState<Array<{id: string, name: string}>>([]);
@@ -13,19 +16,31 @@ export default function DashboardPage() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/users")
+    // Create an AbortController to timeout the request
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+
+    fetch("http://localhost:3000/api/users", { signal: controller.signal })
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch users");
         return res.json();
       })
       .then((data) => {
+        clearTimeout(timeoutId);
         setUsers(data);
         setLoading(false);
       })
       .catch((err) => {
-        setError(err.message);
+        clearTimeout(timeoutId);
+        // Silently handle errors during build or when backend is not available
+        setError(err.name === 'AbortError' ? 'Request timeout' : err.message);
         setLoading(false);
       });
+
+    return () => {
+      clearTimeout(timeoutId);
+      controller.abort();
+    };
   }, []);
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-card">
@@ -41,12 +56,7 @@ export default function DashboardPage() {
             </div>
 
             <div className="flex items-center space-x-4">
-              <Button variant="ghost" size="icon">
-                <Settings className="h-4 w-4" />
-              </Button>
-              <Button variant="ghost" size="icon">
-                <LogOut className="h-4 w-4" />
-              </Button>
+              <UserMenu />
             </div>
           </div>
         </div>

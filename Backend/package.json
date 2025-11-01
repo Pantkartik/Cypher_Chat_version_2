@@ -1,19 +1,22 @@
 {
-  "name": "backend",
+  "name": "cypher-chat-backend",
   "version": "1.0.0",
+  "description": "Cypher Chat Backend - Real-time chat with video calls",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
     "dev": "node index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "socket.io": "^4.8.1",
-    "uuid": "^13.0.0"
-  }
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2",
+    "uuid": "^9.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": ["chat", "socket.io", "real-time", "video-calls"],
+  "author": "Cypher Chat",
+  "license": "MIT"
 }

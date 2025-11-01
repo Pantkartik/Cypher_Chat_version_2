@@ -30,9 +30,12 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import { useTheme } from "next-themes"
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function SettingsPage() {
   const { theme, setTheme } = useTheme()
+  const router = useRouter();
   const [profile, setProfile] = useState({
     name: "John Doe",
     email: "john@example.com",
@@ -52,13 +55,106 @@ export default function SettingsPage() {
   const [isSaving, setIsSaving] = useState(false)
   const [saved, setSaved] = useState(false)
 
+  // Load saved settings on component mount
+  useEffect(() => {
+    const savedSettings = localStorage.getItem('userSettings')
+    if (savedSettings) {
+      try {
+        const settings = JSON.parse(savedSettings)
+        if (settings.name) setProfile(prev => ({ ...prev, name: settings.name }))
+        if (settings.email) setProfile(prev => ({ ...prev, email: settings.email }))
+        if (settings.avatar) setProfile(prev => ({ ...prev, avatar: settings.avatar }))
+        if (settings.notifications) setNotifications(settings.notifications)
+        if (settings.security) setSecurity(settings.security)
+        if (settings.theme) setTheme(settings.theme)
+      } catch (error) {
+        console.error('Failed to load saved settings:', error)
+      }
+    }
+  }, [setTheme])
+
   const handleSave = async () => {
     setIsSaving(true)
-    // Mock save operation
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    setIsSaving(false)
-    setSaved(true)
-    setTimeout(() => setSaved(false), 3000)
+    
+    try {
+      // Save profile data
+      const userData = {
+        name: profile.name,
+        email: profile.email,
+        avatar: profile.avatar,
+        notifications,
+        security,
+        theme
+      }
+      
+      // Store in localStorage
+      localStorage.setItem('userSettings', JSON.stringify(userData))
+      
+      // Mock API call
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+      
+      setIsSaving(false)
+      setSaved(true)
+      setTimeout(() => setSaved(false), 3000)
+    } catch (error) {
+      setIsSaving(false)
+      console.error('Failed to save settings:', error)
+    }
+  }
+
+  const handleExportData = () => {
+    const exportData = {
+      profile,
+      notifications,
+      security,
+      exportDate: new Date().toISOString()
+    }
+    
+    const dataStr = JSON.stringify(exportData, null, 2)
+    const dataBlob = new Blob([dataStr], { type: 'application/json' })
+    const url = URL.createObjectURL(dataBlob)
+    
+    const link = document.createElement('a')
+    link.href = url
+    link.download = `cypher-chat-settings-${new Date().toISOString().split('T')[0]}.json`
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    URL.revokeObjectURL(url)
+  }
+
+  const handleDeleteAccount = () => {
+    if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
+      // Clear all user data
+      localStorage.removeItem('userSettings')
+      localStorage.removeItem('user')
+      sessionStorage.clear()
+      
+      // Redirect to home
+      router.push('/')
+    }
+  }
+
+  const handleResetDefaults = () => {
+    if (confirm('Are you sure you want to reset all settings to defaults?')) {
+      setProfile({
+        name: "John Doe",
+        email: "john@example.com",
+        avatar: "/placeholder.svg",
+      })
+      setNotifications({
+        messages: true,
+        mentions: true,
+        sounds: true,
+        desktop: false,
+      })
+      setSecurity({
+        twoFactor: false,
+        sessionTimeout: "30",
+        encryptionLevel: "high",
+      })
+      setTheme("system")
+    }
   }
 
   const handleAvatarUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -192,7 +288,7 @@ export default function SettingsPage() {
                     <h4 className="font-medium">Export Data</h4>
                     <p className="text-sm text-muted-foreground">Download all your chat data and settings</p>
                   </div>
-                  <Button variant="outline" className="bg-transparent">
+                  <Button variant="outline" className="bg-transparent" onClick={handleExportData}>
                     <Download className="w-4 h-4 mr-2" />
                     Export
                   </Button>
@@ -202,7 +298,7 @@ export default function SettingsPage() {
                     <h4 className="font-medium text-destructive">Delete Account</h4>
                     <p className="text-sm text-muted-foreground">Permanently delete your account and all data</p>
                   </div>
-                  <Button variant="destructive">
+                  <Button variant="destructive" onClick={handleDeleteAccount}>
                     <Trash2 className="w-4 h-4 mr-2" />
                     Delete
                   </Button>
@@ -399,7 +495,7 @@ export default function SettingsPage() {
         </Tabs>
 
         <div className="flex justify-end space-x-4 pt-6">
-          <Button variant="outline" className="bg-transparent">
+          <Button variant="outline" className="bg-transparent" onClick={handleResetDefaults}>
             Reset to Defaults
           </Button>
           <Button onClick={handleSave} disabled={isSaving}>

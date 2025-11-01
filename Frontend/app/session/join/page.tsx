@@ -1,5 +1,7 @@
 "use client"
 
+export const dynamic = 'force-dynamic';
+
 import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -11,7 +13,7 @@ import { Badge } from "@/components/ui/badge"
 import { Camera, CameraOff, ArrowLeft, Users, QrCode, KeyRound, CheckCircle, AlertCircle } from "lucide-react"
 import Link from "next/link"
 import { useRouter, useSearchParams } from "next/navigation"
-import QrReader from "react-qr-reader";
+
 
 export default function JoinSessionPage() {
   const router = useRouter()
@@ -87,24 +89,31 @@ export default function JoinSessionPage() {
       // Retry mechanism with 3 attempts and 1-second delay
       let attempt = 0;
       const maxAttempts = 3;
-      let res;
-      let data;
+      let res: Response | null = null;
+      let data: any = null;
       
       while (attempt < maxAttempts) {
         attempt++;
         console.log(`[DEBUG] Attempt ${attempt} of ${maxAttempts}`);
         
-        res = await fetch("http://localhost:3001/api/session/join", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ sessionId: trimmedToken, username: username.trim() }),
-        });
-        
-        data = await res.json();
-        console.log(`[DEBUG] Backend response (attempt ${attempt}):`, data);
-        
-        if (res.ok && data.success) {
-          break; // Success, exit retry loop
+        try {
+          res = await fetch("http://localhost:3001/api/session/join", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ sessionId: trimmedToken, username: username.trim() }),
+          });
+          
+          data = await res.json();
+          console.log(`[DEBUG] Backend response (attempt ${attempt}):`, data);
+          
+          if (res.ok && data.success) {
+            break; // Success, exit retry loop
+          }
+        } catch (fetchError) {
+          console.error(`[DEBUG] Fetch attempt ${attempt} failed:`, fetchError);
+          if (attempt === maxAttempts) {
+            throw fetchError; // Re-throw on final attempt
+          }
         }
         
         if (attempt < maxAttempts) {
@@ -113,10 +122,10 @@ export default function JoinSessionPage() {
         }
       }
       
-      if (res.ok && data.success) {
+      if (res && res.ok && data && data.success) {
         router.push(`/auth/chat/${trimmedToken}?username=${encodeURIComponent(username)}`);
       } else {
-        setError(data.error || "Session not found. Please check the token and try again. Expected format: 8 characters (e.g., ABC12345)");
+        setError(data?.error || "Session not found. Please check the token and try again. Expected format: 8 characters (e.g., ABC12345)");
       }
     } catch (err) {
       console.error("[DEBUG] Join error:", err);

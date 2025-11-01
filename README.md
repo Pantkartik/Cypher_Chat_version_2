@@ -108,7 +108,7 @@ Once installed, you can access the application through your web browser.
 
 ### Example Code Snippet (Frontend Connection)
 
-This is a conceptual example of how the frontend might connect to the backend WebSocket server:
+This is a conceptual example of how the frontend might connect to the backend WebSocket server:5
 
 ```typescript
 // Frontend (e.g., in a JavaScript or TypeScript file)

@@ -1,5 +1,7 @@
 "use client"
 
+export const dynamic = 'force-dynamic';
+
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -65,7 +67,9 @@ export default function HostSessionPage() {
 
   const startChat = () => {
     if (sessionToken) {
-      router.push(`/auth/chat/${sessionToken}`)
+      // Get the logged-in user's name from localStorage or use a default
+      const userName = localStorage.getItem('userName') || 'Host';
+      router.push(`/auth/chat/${sessionToken}?username=${encodeURIComponent(userName)}`)
     }
   }
 
